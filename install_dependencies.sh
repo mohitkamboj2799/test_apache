@@ -1,4 +1,4 @@
 #!/bin/bash
-set -e
+echo "hi"
 # install docker
 sudo yum install docker -y
