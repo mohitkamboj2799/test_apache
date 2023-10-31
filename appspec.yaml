@@ -1,18 +1,24 @@
 version: 0.0
 os: linux
 files:
-  - source: /
+  - source: /opt/codedeploy-agent/deployment-root/bf8a7ee8-940d-4b04-b02d-04158343a1f4/d-2QSS816J2/deployment-archive/mohitkamboj2799-test_apache-3bb213b
     destination: /var/www/
 hooks:
-
-  
-  ApplicationStop:
-    - location: scripts/stop_server.sh
+ BeforeInstall:
+    - location: scripts/install_dependencies.sh
       timeout: 300
       runas: root
   AfterInstall:
+    - location: scripts/change_permissions.sh
+      timeout: 300
+      runas: root
+  ApplicationStart:
     - location: scripts/start_server.sh
-    
+    - location: scripts/create_test_db.sh
+      timeout: 300
+      runas: root
+  ApplicationStop:
+    - location: scripts/stop_server.sh
       timeout: 300
       runas: root
 
