@@ -5,4 +5,4 @@ set -e
 docker push mohitkamboj2799/simple-python-flask-app
 
 # Run the Docker image as a container
-docker run -it mohitkamboj2799/simple-python-flask-app
+docker run -d 8080:8080 mohitkamboj2799/simple-python-flask-app
