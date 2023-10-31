@@ -1,7 +1,7 @@
 version: 0.0
 os: linux
 files:
-  - source: /opt/codedeploy-agent/deployment-root/bf8a7ee8-940d-4b04-b02d-04158343a1f4/d-2QSS816J2/deployment-archive/mohitkamboj2799-test_apache-3bb213b
+  - source: /
     destination: /var/www/
 hooks:
  BeforeInstall:
